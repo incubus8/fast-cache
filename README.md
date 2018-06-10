@@ -1,4 +1,8 @@
-## Fast Cache
+<p align="center"> 
+    <img src="assets/logo.png"/>
+</p>
+
+# Fast Cache
 
 Lightweight, Simple, and High Performance In-Memory Caching Server via REST using LRU.
 
