@@ -1,10 +1,11 @@
 package rest
 
 import (
+	"errors"
+	"io/ioutil"
+
 	"github.com/gin-gonic/gin"
 	"github.com/hashicorp/golang-lru"
-	"io/ioutil"
-	"errors"
 )
 
 type LRUApplication struct {

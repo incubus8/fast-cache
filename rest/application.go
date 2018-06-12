@@ -7,6 +7,8 @@ import (
 type Application struct {
 	lruApp LRUApplication
 	arcApp ARCApplication
+
+	Metrics
 }
 
 func NewApplication() *Application {

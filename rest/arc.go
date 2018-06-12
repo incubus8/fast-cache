@@ -1,10 +1,11 @@
 package rest
 
 import (
-	"github.com/hashicorp/golang-lru"
-	"github.com/gin-gonic/gin"
-	"io/ioutil"
 	"errors"
+	"io/ioutil"
+
+	"github.com/gin-gonic/gin"
+	"github.com/hashicorp/golang-lru"
 )
 
 type ARCApplication struct {

@@ -3,3 +3,7 @@
 [prune]
   go-tests = true
   unused-packages = true
+
+[[constraint]]
+  name = "go.opencensus.io"
+  version = "0.13.0"

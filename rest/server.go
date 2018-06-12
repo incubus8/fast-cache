@@ -7,7 +7,7 @@ import (
 func NewServer(app *Application) {
 	conf := g.Config{
 		ListenAddr: "localhost:8080",
-		Handler: app.router(),
+		Handler: app.WrapOchttp(app),
 	}
 
 	g.Run(conf)

@@ -22,5 +22,8 @@ func (app *Application) router() *gin.Engine {
 			v1.PUT("/arc/:key", app.arcApp.AddCache)
 		}
 	}
+
+	router.Any("/metrics", gin.WrapH(app.GetPrometheusExporter()))
+
 	return router
 }
