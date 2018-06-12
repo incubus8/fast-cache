@@ -5,8 +5,10 @@ import (
 )
 
 func NewServer(app *Application) {
-	g.Run(g.Config{
+	conf := g.Config{
 		ListenAddr: "localhost:8080",
 		Handler: app.router(),
-	})
+	}
+
+	g.Run(conf)
 }
