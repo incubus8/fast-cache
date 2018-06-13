@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 5s
+
+  external_labels:
+    monitor: 'fast-cache_http'
+
+scrape_configs:
+  - job_name: 'fast-cache_http'
+
+    scrape_interval: 4s
+
+    static_configs:
+      - targets: ['localhost:8080']
