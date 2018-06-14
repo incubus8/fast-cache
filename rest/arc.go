@@ -40,7 +40,7 @@ func (arc *ARCApplication) GetCache(c *gin.Context) {
 
 	data, ok := arc.cache.Get(key)
 	if !ok {
-		c.AbortWithError(500, errors.New("no lru cache with this key: " + key))
+		c.AbortWithError(500, errors.New("no ARC LRU cache with this key: " + key))
 		return
 	}
 
