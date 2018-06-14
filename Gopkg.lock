@@ -48,6 +48,12 @@
   revision = "dffcd1c5eec34b107a1e5f28d841590b629aa659"
 
 [[projects]]
+  name = "github.com/karlseguin/ccache"
+  packages = ["."]
+  revision = "a2d62155777b39595c825ed3824279e642a5db3c"
+  version = "v2.0.2"
+
+[[projects]]
   name = "github.com/mattn/go-isatty"
   packages = ["."]
   revision = "0360b2af4f38e8d38c7fce2a9f4e702702d73a39"
@@ -197,6 +203,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "dd7ffce67dab4d45825dd7cbd5347b65bb1e7457dfcd1a30e9be784fff78d17b"
+  inputs-digest = "03cc8184f8eb5ac4fcaafc4ab80edf7e78eb42da95f94c24da3b660fa1cf656e"
   solver-name = "gps-cdcl"
   solver-version = 1

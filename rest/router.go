@@ -20,6 +20,11 @@ func (app *Application) router() *gin.Engine {
 			v1.DELETE("/arc/:key", app.arcApp.DelCache)
 			v1.POST("/arc/:key", app.arcApp.AddCache)
 			v1.PUT("/arc/:key", app.arcApp.AddCache)
+
+			v1.GET("/ccache/:key", app.ccacheApp.GetCache)
+			v1.DELETE("/ccache/:key", app.ccacheApp.DelCache)
+			v1.POST("/ccache/:key", app.ccacheApp.AddCache)
+			v1.PUT("/ccache/:key", app.ccacheApp.AddCache)
 		}
 	}
 
