@@ -3,6 +3,7 @@ package rest
 import (
 	"errors"
 	"io/ioutil"
+	"strconv"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -27,7 +28,14 @@ func (ccache *CCacheApplication) AddCache(c *gin.Context) {
 			return
 		}
 
-		ccache.cache.Set(key, data, time.Minute * 10)
+		expiryQuery := c.DefaultQuery("expiry", "10")
+		duration, err := strconv.Atoi(expiryQuery)
+		if err != nil {
+			c.AbortWithError(400, err)
+			return
+		}
+
+		ccache.cache.Set(key, data, time.Minute * time.Duration(duration))
 		c.JSON(200, string(data))
 	}
 }
