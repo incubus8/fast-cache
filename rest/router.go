@@ -28,6 +28,7 @@ func (app *Application) router() *gin.Engine {
 		}
 	}
 
+	router.GET("/stats", statsHandler)
 	router.Any("/metrics", gin.WrapH(app.GetPrometheusExporter()))
 
 	return router
