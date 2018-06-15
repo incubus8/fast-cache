@@ -3,6 +3,7 @@ package rest
 import (
 	"errors"
 	"io/ioutil"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 	"github.com/hashicorp/golang-lru"
@@ -27,7 +28,7 @@ func (arc *ARCApplication) AddCache(c *gin.Context) {
 		}
 
 		arc.cache.Add(key, data)
-		c.JSON(200, string(data))
+		c.JSON(http.StatusOK, string(data))
 	}
 }
 
@@ -44,7 +45,7 @@ func (arc *ARCApplication) GetCache(c *gin.Context) {
 		return
 	}
 
-	c.JSON(200, string(data.([]byte)))
+	c.JSON(http.StatusOK, string(data.([]byte)))
 }
 
 func (arc *ARCApplication) DelCache(c *gin.Context) {
@@ -56,5 +57,5 @@ func (arc *ARCApplication) DelCache(c *gin.Context) {
 
 	arc.cache.Remove(key)
 
-	c.Status(204)
+	c.Status(http.StatusNoContent)
 }

@@ -3,6 +3,7 @@ package rest
 import (
 	"errors"
 	"io/ioutil"
+	"net/http"
 	"strconv"
 	"time"
 
@@ -36,7 +37,7 @@ func (ccache *CCacheApplication) AddCache(c *gin.Context) {
 		}
 
 		ccache.cache.Set(key, data, time.Minute * time.Duration(duration))
-		c.JSON(200, string(data))
+		c.JSON(http.StatusOK, string(data))
 	}
 }
 
@@ -58,7 +59,7 @@ func (ccache *CCacheApplication) GetCache(c *gin.Context) {
 		return
 	}
 
-	c.JSON(200, string(item.Value().([]byte)))
+	c.JSON(http.StatusOK, string(item.Value().([]byte)))
 }
 
 func (ccache *CCacheApplication) DelCache(c *gin.Context) {
@@ -70,5 +71,5 @@ func (ccache *CCacheApplication) DelCache(c *gin.Context) {
 
 	ccache.cache.Delete(key)
 
-	c.Status(204)
+	c.Status(http.StatusNoContent)
 }
