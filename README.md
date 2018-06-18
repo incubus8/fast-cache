@@ -4,8 +4,13 @@
 
 # Fast Cache
 
-Lightweight, Simple, and High Performance In-Memory Caching Server via REST using LRU.
+Ultra Lightweight, Simple, and High Performance In-Memory Caching Server via REST.
 
+## Features
+
+* Hoshicorp LRU
+* Hoshicorp ARC-LRU
+* [CCache LRU](github.com/karlseguin/ccache)
 
 ## Requirements
 
